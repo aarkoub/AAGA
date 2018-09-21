@@ -10,6 +10,7 @@ public class AlgorithmeK {
 		BigInteger pow5 = new BigInteger("10").pow(5);
 		BigInteger pow10 = new BigInteger("10").pow(10);
 		BigInteger dix = new BigInteger("10");
+		boolean fin = false;
 		
 		BigInteger y = x.divide(pow9);
 		
@@ -17,7 +18,7 @@ public class AlgorithmeK {
 		
 		System.out.println("Start");
 		
-		for(int i=0; i<y.intValue()+1; i++) {
+		while(fin!=true) {
 			
 			System.out.println("x = "+x.toString());
 			System.out.println("y = "+y.toString());
@@ -26,73 +27,86 @@ public class AlgorithmeK {
 			z = x.divide(pow8).mod(dix);
 			System.out.println("z = "+z.toString());
 			
+			System.out.println();
+			
 			switch(z.intValue()+3) {
 			
 			case 3 :
 				if(x.compareTo(new BigInteger("5").multiply(pow9))==-1){
 					x = x.add(new BigInteger("5").multiply(pow9));
 				}
-				break;
+				System.out.println("x = "+x.toString());
+				
 			
 			case 4:
 				x = x.pow(2).divide(pow5).mod(pow10);
+				System.out.println("x = "+x.toString());
 					
-				break;
 			
 			case 5 :
 				x = x.multiply(new BigInteger("1001001001")).mod(pow10);
-				break;
+				System.out.println("x = "+x.toString());
+			
 			
 			case 6:
 				if(x.compareTo(pow8)==-1){
 					x = x.add(new BigInteger("9814055677"));
+					
 				}
 				else{
 					x = pow10.subtract(x);
 				}
-				break;
+				System.out.println("x = "+x.toString());
 			
 			case 7 :
 				x = pow5.multiply(x.mod(pow5)).add(x.divide(pow5));
-				break;
+				System.out.println("x = "+x.toString());
 			
 			case 8:
 				x = x.multiply(new BigInteger("1001001001")).mod(pow10);
-				break;
+				System.out.println("x = "+x.toString());
 			
 			case 9 : 
 				BigInteger newX = new BigInteger("0");
-				Integer k=0;
-				while(x.mod(dix.pow(k)).compareTo(new BigInteger("0"))!=0){
+				Integer k=1;
+				
+				while(k != x.toString().toCharArray().length+1){
 					newX.add(x.mod(dix.pow(k)).multiply(dix.multiply(new BigInteger(k.toString()))));
+					
+					if(x.mod(dix.pow(k)).divide(dix.pow(k-1)).compareTo(new BigInteger("0"))==1) {
+						
+						newX = newX.add(x.mod(dix.pow(k)).divide(dix.pow(k-1)).subtract(new BigInteger("1")).multiply(dix.pow(k-1)));
+					}
+					
 					k++;
 				}
+							
 				
 				x = newX;
 				
-				break;
+				System.out.println("x = "+x.toString());
 			
 			case 10:
 				
-				if(x.compareTo(new BigInteger("5").multiply(pow9))==-1){
+				if(x.compareTo(pow5)==-1){
 					x = x.pow(2).add(new BigInteger("99999"));
 				}
 				else{
-					x.subtract(new BigInteger("99999"));
+					x = x.subtract(new BigInteger("99999"));
 				}
-				break;
+				System.out.println("x = "+x.toString());
 			
 			case 11: 
 				
 				while(x.compareTo(pow9)==-1){
 					x = x.multiply(dix);
 				}
-				
-				break;
+				System.out.println("x = "+x.toString());
+			
 			
 			case 12:
 				x = x.multiply(x.subtract(new BigInteger("1"))).divide(pow5).mod(pow10);
-				break;
+				System.out.println("x = "+x.toString());
 			
 			case 13:
 				if(y.compareTo(new BigInteger("0"))==1){
@@ -100,11 +114,11 @@ public class AlgorithmeK {
 				}
 				else{
 					System.out.println("Valeur de X = "+x.toString());
-					i = y.intValue()+1;
+					fin = true;
 				}
-				break;
+				
 			
-			}
+			}  
 			
 			
 		}
