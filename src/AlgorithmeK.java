@@ -10,7 +10,7 @@ public class AlgorithmeK {
 		BigInteger pow5 = new BigInteger("10").pow(5);
 		BigInteger pow10 = new BigInteger("10").pow(10);
 		BigInteger dix = new BigInteger("10");
-		boolean fin = false;
+		boolean fin = false; 
 		
 		BigInteger y = x.divide(pow9);
 		
@@ -35,17 +35,17 @@ public class AlgorithmeK {
 				if(x.compareTo(new BigInteger("5").multiply(pow9))==-1){
 					x = x.add(new BigInteger("5").multiply(pow9));
 				}
-				System.out.println("x = "+x.toString());
+				//System.out.println("x = "+x.toString());
 				
 			
 			case 4:
 				x = x.pow(2).divide(pow5).mod(pow10);
-				System.out.println("x = "+x.toString());
+				//System.out.println("x = "+x.toString());
 					
 			
 			case 5 :
 				x = x.multiply(new BigInteger("1001001001")).mod(pow10);
-				System.out.println("x = "+x.toString());
+				//System.out.println("x = "+x.toString());
 			
 			
 			case 6:
@@ -56,15 +56,15 @@ public class AlgorithmeK {
 				else{
 					x = pow10.subtract(x);
 				}
-				System.out.println("x = "+x.toString());
+				//System.out.println("x = "+x.toString());
 			
 			case 7 :
 				x = pow5.multiply(x.mod(pow5)).add(x.divide(pow5));
-				System.out.println("x = "+x.toString());
+				//System.out.println("x = "+x.toString());
 			
 			case 8:
 				x = x.multiply(new BigInteger("1001001001")).mod(pow10);
-				System.out.println("x = "+x.toString());
+				//System.out.println("x = "+x.toString());
 			
 			case 9 : 
 				BigInteger newX = new BigInteger("0");
@@ -84,7 +84,7 @@ public class AlgorithmeK {
 				
 				x = newX;
 				
-				System.out.println("x = "+x.toString());
+				//System.out.println("x = "+x.toString());
 			
 			case 10:
 				
@@ -94,19 +94,19 @@ public class AlgorithmeK {
 				else{
 					x = x.subtract(new BigInteger("99999"));
 				}
-				System.out.println("x = "+x.toString());
+				//System.out.println("x = "+x.toString());
 			
 			case 11: 
 				
 				while(x.compareTo(pow9)==-1){
 					x = x.multiply(dix);
 				}
-				System.out.println("x = "+x.toString());
+				//System.out.println("x = "+x.toString());
 			
 			
 			case 12:
 				x = x.multiply(x.subtract(new BigInteger("1"))).divide(pow5).mod(pow10);
-				System.out.println("x = "+x.toString());
+				//System.out.println("x = "+x.toString());
 			
 			case 13:
 				if(y.compareTo(new BigInteger("0"))==1){
