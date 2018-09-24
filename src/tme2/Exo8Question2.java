@@ -13,8 +13,9 @@ public class Exo8Question2 {
 
 		for(int i=0; i<10; i++) {
 			x = a.multiply(x).add(c).mod(m).shiftRight(16);
-			BigInteger maxBit = x.shiftLeft(31);
-			System.out.println(x.bitLength());
+			BigInteger maxBit = x.shiftLeft(31).shiftRight(31);
+			
+			System.out.println(maxBit);
 			if(maxBit.compareTo(BigInteger.ONE)==0) {
 				x = x.subtract(new BigInteger("2").pow(31));
 			}
