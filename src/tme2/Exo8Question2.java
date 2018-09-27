@@ -9,16 +9,20 @@ public class Exo8Question2 {
 		BigInteger c = new BigInteger("11");
 		BigInteger m = new BigInteger("2").pow(48);
 		BigInteger x = new BigInteger("156079716630527"); 
-
+		BigInteger res ;
 
 		for(int i=0; i<10; i++) {
-			x = a.multiply(x).add(c).mod(m).shiftRight(16);
-			BigInteger maxBit = x.shiftRight(31);
 			
-			if(maxBit.compareTo(BigInteger.ONE)==0) {
-				x = x.subtract(new BigInteger("2").pow(32));
+			x = a.multiply(x).add(c).mod(m);
+			
+			res = x.shiftRight(16);
+		
+			if(res.testBit(31)) {
+				res = res.subtract(new BigInteger("2").pow(32));
 			}
-			System.out.println(x);
+			
+			System.out.println(res);
+		
 			
 		}
 	}
