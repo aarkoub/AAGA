@@ -35,12 +35,11 @@ public class IntegerGenerator {
 	
 	public static void main(String [] args) {
 		int n = 10;
-		BigInteger seed = new BigInteger("123456789123456789");
+		
 		IntegerGenerator intGen = new IntegerGenerator(n);
 		
 		for(int i=0; i<50; i++)
-		System.out.println(intGen.nextInt());
-		System.out.println(intGen.nextInt());
+			System.out.println(intGen.nextInt());
 		
 	}
 	
