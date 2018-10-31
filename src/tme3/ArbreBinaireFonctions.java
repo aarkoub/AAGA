@@ -48,7 +48,7 @@ public class ArbreBinaireFonctions {
 		IntegerGenerator intGen ;
 		
 		Node[] peres = new Node[taille];
-		IntegerGenerator intGen2 = new IntegerGenerator(2);
+		IntegerGenerator intGen2 = new IntegerGenerator(1);
 		intGen = new IntegerGenerator(taille-1);
 		
 		Node current = null;
